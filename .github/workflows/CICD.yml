@@ -52,4 +52,4 @@ jobs:
           --service-account=1089739269780-compute@developer.gserviceaccount.com \
           --cpu-boost \
           --region=us-central1 \
-          --project=swift-terra-405619 
+          --project=swift-terra-405619  
