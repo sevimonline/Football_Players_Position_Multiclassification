@@ -12,7 +12,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templetes")
 
 # Modeli ve gerekli dönüşüm fonksiyonlarını yükleyin
-load_model = pickle.load(open('logreg_l2_model.pkl', 'rb'))
+load_model = pickle.load(open('l2_logreg.pkl', 'rb'))
 label_encoder_att_work_rate = LabelEncoder()
 label_encoder_def_work_rate = LabelEncoder()
 label_encoder_foot = LabelEncoder()
@@ -222,11 +222,11 @@ async def position_predict(
         }])
 
         # scaler'ı uygun şekilde eğitin
-        scaler.fit(df)
+        
 
-        scaled_values = scaler.transform(df)
+        
         # Make predictions
-        position_prediction = load_model.predict(scaled_values)
+        position_prediction = load_model.predict(df)
 
         # Tahmin sonucunu sınıfa çevirme
         position_mapping = {0: 'Hücum Hattı', 1: 'Orta Saha', 2: 'Defans', 3: 'Kale'}
