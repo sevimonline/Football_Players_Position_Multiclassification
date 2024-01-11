@@ -1,7 +1,6 @@
 from fastapi.testclient import TestClient
 from main import app
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+
 
 client = TestClient(app)
 
