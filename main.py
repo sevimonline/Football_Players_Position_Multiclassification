@@ -16,7 +16,7 @@ templates = Jinja2Templates(directory="templetes")
 
 # Modeli ve gerekli dönüşüm fonksiyonlarını yükleyin
 #load_model = pickle.load(open('l2_logreg.pkl', 'rb'))
-load_model = joblib.load('keras_model.joblib')
+load_model = joblib.load('yeni_model.joblib')
 
 label_encoder_att_work_rate = LabelEncoder()
 label_encoder_def_work_rate = LabelEncoder()
