@@ -222,9 +222,9 @@ async def position_predict(
         }])
 
         # scaler'ı uygun şekilde eğitin
-        
+        scaler.fit(df)
 
-        
+        scaled_values = scaler.transform(df)
         # Make predictions
         position_prediction = load_model.predict(df)
 
