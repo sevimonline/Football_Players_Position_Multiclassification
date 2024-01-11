@@ -6,9 +6,6 @@ import pandas as pd
 import pickle
 from fastapi.staticfiles import StaticFiles
 from sklearn.preprocessing import LabelEncoder, StandardScaler
-import joblib
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
