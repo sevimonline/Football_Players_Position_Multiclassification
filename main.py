@@ -11,7 +11,7 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templetes")
 
-# Modeli ve gerekli dönüşüm fonksiyonlarını yükleyin
+
 load_model = pickle.load(open('logreg_l2_model.pkl', 'rb'))
 
 
@@ -19,7 +19,7 @@ label_encoder_att_work_rate = LabelEncoder()
 label_encoder_def_work_rate = LabelEncoder()
 label_encoder_foot = LabelEncoder()
 
-# Att_Work_Rate, Def_Work_Rate ve Foot için LabelEncoder nesnelerini eğitme
+
 att_work_rate_values = ['Low', 'Medium', 'High']
 def_work_rate_values = ['Low', 'Medium', 'High']
 foot_values = ['Left', 'Right']
@@ -226,14 +226,14 @@ async def position_predict(
         scaler.fit(df)
     
 
-        # scaler'ı uygun şekilde eğitin
+        
 
         scaler_values = scaler.transform(df)
 
-        # Make predictions
+       
         position_prediction = load_model.predict(scaler_values)
 
-        # Tahmin sonucunu sınıfa çevirme
+       
         position_mapping = {0: 'Hücum Hattı', 1: 'Orta Saha', 2: 'Defans', 3: 'Kale'}
         predicted_position = position_mapping[position_prediction[0]]
 
